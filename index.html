@@ -14,96 +14,135 @@
 </script>
 <style>
 
-img {
-  object-fit: cover;
-  width:300px;
-  height:300px;
-}
-video{
-  object-fit: cover;
-  width:300px;
-  height:300px;
+body, html {
+  margin: 0;
+  padding: 0;
 }
 
-div#outer {
+img, video {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  background: #eee;
+}
+
+a, a:visited {
+  color: #fff;
+}
+
+#outer {
   margin: auto;
-  width:1200px;
+  max-width: 1200px;
+  width: 80%;
 }
 
-div#menu{
-  left: 0px;
-  top:0px;
-  position:fixed;
-  width:120px;
+#menu{
+  text-align: center;
+  margin-bottom: 25px;
 }
 
-.words {
-background: #FFFFFF;
-box-sizing: border-box;
-color:: rgb(0, 0, 0);
-cursor: pointer;
-display: block;
-font-family: "Courier New", Courier, monospace;
-font-size: 16px;
-font-stretch: 100%;
-font-style: normal;
-font-variant-caps: normal;
-font-variant-east-asian: normal;
-font-variant-ligatures: normal;
-font-variant-numeric: normal;
-font-weight: 400;
+#menu button {
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  color: #000;
+  border: #fff;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+  height: 24px;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 0px;
+  margin-left: 8px;
+  margin-right: 0px;
+  margin-top: 20px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+  text-align: center;
+  text-indent: 0px;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: none;
+  transition-delay: 0s, 0s;
+  transition-duration: 0.8s, 0.8s;
+  transition-property: border-color, color;
+  transition-timing-function: ease-out, ease-out;
+  user-select: none;
+  width: 177.234px;
+  word-spacing: 0px;
+  writing-mode: horizontal-tb;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  padding: 2px 6px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: border-color .8s ease-out,color .8s ease-out;
 }
 
-button {
-background: #FFFFFF;
-box-sizing: border-box;
-color:: rgb(0, 0, 0);
-cursor: pointer;
-display: block;
-font-family: "Courier New", Courier, monospace;
-font-size: 16px;
-font-stretch: 100%;
-font-style: normal;
-font-variant-caps: normal;
-font-variant-east-asian: normal;
-font-variant-ligatures: normal;
-font-variant-numeric: normal;
-font-weight: 400;
-height: 24px;
-letter-spacing: normal;
-line-height: normal;
-margin-bottom: 0px;
-margin-left: 8px;
-margin-right: 0px;
-margin-top: 20px;
-padding-bottom: 2px;
-padding-left: 6px;
-padding-right: 6px;
-padding-top: 2px;
-text-align: center;
-text-indent: 0px;
-text-rendering: auto;
-text-shadow: none;
-text-transform: none;
-transition-delay: 0s, 0s;
-transition-duration: 0.8s, 0.8s;
-transition-property: border-color, color;
-transition-timing-function: ease-out, ease-out;
-user-select: none;
-width: 177.234px;
-word-spacing: 0px;
-writing-mode: horizontal-tb;
--webkit-font-smoothing: antialiased;
--webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-padding: 2px 6px;
-color: #000;
-border: #FFF;
-border-right: 2px solid #000;
-border-bottom: 2px solid #000;
-transition: border-color .8s ease-out,color .8s ease-out;
+footer {
+  padding: 15px;
+  margin-top: 25px;
+  background: #000;
+  color: #fff;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
 }
 
 button:focus {outline:none;}
+
+@media (prefers-color-scheme: dark) {
+  body, html {
+    background: #000;
+  }
+  img, video {
+    background: #111;
+  }
+  a, a:visited {
+    color: #000;
+  }
+  footer {
+    background: #fff;
+    color: #000;
+  }
+  #menu button {
+    background: #000;
+    color: #fff;
+    border-color: #fff;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #outer {
+    width: 100%;
+    max-width: auto;
+    text-align: center;
+  }
+  video, img {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+  }
+}
 
 </style>
 <script>
@@ -214,41 +253,29 @@ button:focus {outline:none;}
 
 <body>
 
-<div id="outer">
+  <div id="menu">
+    <button onclick="replace(0,100000);">
+      <div id="cheap">Random</div>
+    </button>
+    <button onclick="replace(0,1);">
+      <div id="cheap">below 1tez</div>
+    </button>
+    <button onclick="replace(1,10);">
+      <div id="affordable">1 tez - 10tez</div>
+    </button>
+    <button onclick="replace(10,100);">
+      <div id="medium">10 tez - 100 tez</div>
+    </button>
+    <button onclick="replace(100,100000);">
+      <div id="expensive">above 100 tez</div>
+    </button>
+  </div>
 
+  <div id="outer">
+  </div>
 
-</div>
-<div id="menu" class="but">
-<button onclick="replace(0,100000);">
-  <div id="cheap" class="but">
-  Random
-  </div>
-</button>
-<button onclick="replace(0,1);">
-  <div id="cheap" class="but">
-  below 1tez
-  </div>
-</button>
-<button onclick="replace(1,10);">
-  <div id="affordable" class="but">
-  1 tez - 10tez
-  </div>
-</button>
-<button onclick="replace(10,100);">
-  <div id="medium" class="but">
-  10 tez - 100 tez
-  </div>
-</button>
-<button onclick="replace(100,100000);">
-  <div id="expensive" class="but">
-  above 100 tez
-  </div>
-</button>
-</div>
-<div class="words">
-Created and maintained by <a href="https://www.twitter.com/mtyka">@mtyka</a>
-</div>
+  <footer>
+    Created and maintained by <a href="https://www.twitter.com/mtyka">@mtyka</a>
+  </footer>
 </body>
-
-
 </html>
